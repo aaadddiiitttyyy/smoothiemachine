@@ -1,0 +1,244 @@
+/* Global Styles */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a8c0ff, #3f4c6b);
+    margin: 0;
+    padding: 0;
+    color: #070101;
+}
+
+
+/* Container Styling */
+
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #f0ed93;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: containerAnimation 1s ease-out;
+}
+
+@keyframes containerAnimation {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #55b752;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Form Styling */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.1rem;
+}
+
+input,
+select {
+    padding: 15px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+input:focus,
+select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #f1fdf0;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.5);
+}
+
+button {
+    padding: 14px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+
+/* Add-ons Section (Extras) */
+
+.checkbox-group label {
+    display: block;
+    font-size: 1.2rem;
+    margin: 12px 0;
+    color: #555;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.checkbox-group input:checked {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+
+/* Order Summary Styling */
+
+.order-summary {
+    margin-top: 50px;
+    padding: 35px;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.order-summary.hide {
+    display: none;
+}
+
+#smoothieImageWrapper {
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#smoothieImageWrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+#smoothieImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#smoothieImageWrapper:hover #smoothieImage {
+    transform: scale(1.1);
+}
+
+#orderDetails,
+#orderPrice,
+#customerNameSummary {
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+#orderPrice {
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: #4CAF50;
+    margin-top: 10px;
+}
+
+#orderDetails {
+    font-size: 1.2rem;
+}
+
+.order-summary h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4CAF50;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+
+/* Animation for Order Summary */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Design for Smaller Screens */
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2.3rem;
+    }
+    form {
+        margin-top: 10px;
+    }
+    .order-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #smoothieImageWrapper {
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+    }
+    #orderDetails {
+        margin-right: 0;
+    }
+    button {
+        width: 100%;
+    }
+}
